@@ -1,22 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homework 3 D3 part </title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HW3 — D3 Basic Plots</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    /* page layout */
+    body { font-family: Inter, Arial, sans-serif; margin: 24px; color: #0f1117; }
+    h1, h2 { margin: 0 0 10px 0; }
+    .section { margin-bottom: 36px; }
+    .wrap { border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px; overflow-x: auto; }
+    .note { color: #6b7280; font-size: 0.95rem; margin-top: 6px; }
+    .axis text { font-size: 12px; }
+    .axis path, .axis line { stroke: #9ca3af; }
+    svg { max-width: 100%; height: auto; }
+  </style>
 </head>
 <body>
+  <h1>Homework 3 — D3 Basic Plots</h1>
+  <p class="note">this page is loading: socialMedia.csv, socialMediaAvg.csv, socialMediaTime.csv</p>
 
-    <h1>Solution for the box-plot</h1>
-    <div id="boxplot"></div>
+  <div class="section">
+    <h2>Part 2.1 Side by Side Boxplot</h2>
+    <div class="wrap">
+      <svg id="boxplot" width="880" height="460" role="img" aria-label="Boxplot of Likes by Age Group"></svg>
+    </div>
+    <p class="note">showing Likes distribution across AgeGroup. i am ignoring outliers as allowed.</p>
+  </div>
 
-    <h1>Solution for the side-by-side bar plot</h1>
-    <div id="barplot"></div>
+  <div class="section">
+    <h2>Part 2.2 Side by Side Bar Plot</h2>
+    <div class="wrap">
+      <svg id="bars" width="920" height="460" role="img" aria-label="Average Likes by Platform and PostType"></svg>
+    </div>
+    <p class="note">using socialMediaAvg.csv with columns Platform, PostType, AvgLikes.</p>
+  </div>
 
-    <h1>Solution for the line plot</h1>
-    <div id="lineplot"></div>
-    
-    <script src='https://d3js.org/d3.v7.min.js'></script>
-    <script src='templete.js'></script>   
+  <div class="section">
+    <h2>Part 2.3 Line Plot</h2>
+    <div class="wrap">
+      <svg id="line" width="920" height="460" role="img" aria-label="Average Likes by Date"></svg>
+    </div>
+    <p class="note">using socialMediaTime.csv with columns DateLabel, AvgLikes.</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <script src="templete.js"></script>
 </body>
 </html>
