@@ -52,7 +52,7 @@ d3.csv("socialMedia.csv", d => ({ ...d, Likes: +d.Likes }))
   });
 
 /* Part 2.2: side-by-side bar plot */
-/* reading either long format (Platform,PostType,AvgLikes) or wide pivot (Image,Link,Video) and reshaping if needed */
+/* reading either long format (Platform,PostType,AvgLikes) or wide pivot (Image,Link,Video) and reshaping */
 d3.csv("socialMediaAvg.csv").then(raw => {
   let data;
 
@@ -152,3 +152,4 @@ d3.csv("socialMediaTime.csv").then(raw => {
   g.selectAll("circle.point").data(data).join("circle")
     .attr("class", "point").attr("cx", d => x(d.Date)).attr("cy", d => y(d.AvgLikes)).attr("r", 3.5).attr("fill", "#2563eb");
 });
+
